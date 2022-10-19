@@ -235,10 +235,30 @@ interface Fc108 {
 contract FcJoin is Ownable,ReentrancyGuard {
     Fc108 public fc108Contract;
     uint256 public allAmount;
+    uint256 public devAwardAmount;
+    uint256 public clubAwardAmount;
+    uint256 public directAwardAmount;
+    uint256 public seePointAwardAmount;
+    uint256 public levelAwardAmount1;
+    uint256 public levelAwardAmount2;
+    uint256 public mvpAwardAmount;
 
+    uint256 public poolOutAmount;
+    uint256 public poolEnoughAmount;
+    
     constructor(address fc108Address) {
         fc108Contract = Fc108(fc108Address);
         allAmount = 1.08 ether;
+        devAwardAmount = 0.06 ether;
+        clubAwardAmount = 0.07 ether;
+        directAwardAmount = 0.5 ether;
+        seePointAwardAmount = 0.25 ether;
+        levelAwardAmount1 = 0.04 ether;
+        levelAwardAmount2 = 0.06 ether;
+        mvpAwardAmount = 0.1 ether;
+
+        poolOutAmount = 2 ether;
+        poolEnoughAmount = 12 ether;
     }
 
     receive() external payable {}
